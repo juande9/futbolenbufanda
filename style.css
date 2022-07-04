@@ -1,0 +1,22 @@
+* {
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+}
+
+#map { 
+    width: 100%;
+ }
+
+ .sobreColeccionCont p{
+    font-family: "Lato",sans-serif;
+    text-transform: none;
+ }
+.sobreColeccionContImg{
+    background-image: url(img/crowd.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#accordionListado div img {
+    border:none;
+}
