@@ -1,20 +1,5 @@
-* {
-    font-family: 'Playfair Display', serif;
-}
 
-#map {
-    width: 100%;
-}
 
-.sobreColeccionCont p {
-    font-family: "Lato", sans-serif;
-}
-
-.sobreColeccionContImg {
-    background-image: url(img/crowd.jpg);
-    background-position: center;
-    background-size: cover;
-}
 
 #accordionListado div img {
     border: none;

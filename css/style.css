@@ -1,0 +1,86 @@
+* {
+  font-family: "Playfair Display", serif; }
+
+#map {
+  width: 100%; }
+
+.linktraductor {
+  color: white;
+  text-decoration: none; }
+  .linktraductor:hover {
+    text-decoration: underline;
+    color: #b8b8b8; }
+
+nav .offcanvas li a {
+  text-transform: uppercase;
+  text-align: end;
+  font-size: 1.2em; }
+
+.sobreColeccionContImg, .headerSobreColeccion, .headerlistado, .listadoImg {
+  background-image: url(../img/crowd.jpg);
+  background-position: center;
+  background-size: cover; }
+
+.headerSobreColeccion, .headerlistado {
+  opacity: 0.5;
+  height: 5em; }
+
+.sobreColeccionText {
+  padding-right: 2.3em; }
+  .sobreColeccionText p {
+    font-family: "Lato", sans-serif; }
+
+.listadoImg {
+  background-image: url(../img/crowd2.webp); }
+
+.headerlistado {
+  background-image: url(../img/crowd2.webp); }
+
+.accordion-item h2 {
+  font-family: "Lato", sans-serif; }
+
+.accordion-button:not(.collapsed) {
+  color: #000000;
+  background-color: #ebebeb; }
+
+.accordion-button:focus {
+  border-color: transparent; }
+
+.img-thumbnail {
+  max-width: 200px;
+  max-height: 200px;
+  border: none; }
+
+.thumbnailcontainer {
+  position: relative;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+  .thumbnailcontainer:hover {
+    opacity: 0.90; }
+
+.thumbnailText {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center; }
+
+.thumbnailOverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #130b0b; }
+  .thumbnailOverlay:hover {
+    opacity: 0.90; }

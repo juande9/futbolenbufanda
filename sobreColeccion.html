@@ -17,48 +17,57 @@
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
         integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
         crossorigin=""></script>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+    <!--navbar-->
     <nav class="navbar navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
-            <a class="nav-link" href="#">EN</a>
+            <a class="linktraductor" href="#">EN</a>
             <a class="navbar-brand" href="index.html"><img src="https://via.placeholder.com/50x50"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse text-end" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Sobre la colección</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="listado.html">Listado de Bufandas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Intercambio/Venta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Mapa Interactivo</a>
-                    </li>
-                </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+                aria-controls="offcanvasScrolling"><span class="navbar-toggler-icon"></span></button>
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+                id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                <div class="offcanvas-header">
+                    <a class="navbar-brand" href="index.html"><img src="https://via.placeholder.com/50x50"></a>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body bg-dark">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="sobreColeccion.html">Sobre la colección</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="listado.html">Listado de Bufandas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Intercambio/Venta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Mapa Interactivo</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
     </nav>
+    <div class="d-lg-none headerSobreColeccion"></div>
     <section class="container sobreColeccion">
-        <div class="row">
+                <div class="row">
             <div class="sobreColeccionCont col-lg-8">
-            <h1 class="my-lg-5 my-3 sobreColeccionTitle">Sobre la Colección</h1>
-            <p class="ps-lg-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-                qui.
-                Laudantium necessitatibus omnis quo
-                culpa qui ut, delectus temporibus, quasi esse laboriosam velit dolor rerum nulla similique molestiae
-                quae dolore?</p>
-            <p class="ps-lg-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-                qui.
-                Laudantium necessitatibus omnis quo
-                culpa qui ut, delectus temporibus, quasi esse laboriosam velit dolor rerum nulla similique molestiae
-                quae dolore?</p>
+                <h1 class="my-lg-5 my-3 sobreColeccionTitle">Sobre la Colección</h1>
+                <div class="ps-lg-5 sobreColeccionText">
+                    <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi neque vero a excepturi
+                        sunt minima ducimus ea inventore quibusdam, alias vitae nesciunt modi aspernatur, sint
+                        exercitationem possimus maxime sapiente hic.</p>
+                    <p class="">Phasellus et ex consectetur, aliquet sapien eget, blandit ex. Donec tristique augue ut
+                        suscipit consequat. Aenean nec placerat nunc, quis cursus ipsum. Aenean egestas suscipit massa,
+                        ac dictum lectus dictum et. Morbi et lacinia erat. Integer vitae nunc ut mauris maximus
+                        vestibulum non ut ex. Donec congue felis justo, ac pellentesque nunc ultricies sed. Maecenas
+                        pharetra orci a nisi imperdiet eleifend. Duis nec ex vehicula, rhoncus orci quis, mollis risus.
+                    </p>
+                </div>
             </div>
             <div class="col-lg-4 d-none d-lg-block vh-100 sobreColeccionContImg">
             </div>
