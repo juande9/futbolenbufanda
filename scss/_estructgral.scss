@@ -5,6 +5,30 @@ $fuenteSansSerif: "Lato", sans-serif;
     font-family: $fuenteSerif;
 }
 
+/* Contenedor Secciones Gral*/
+
+.ConteinerText {
+    padding-right: 2.3em;
+
+    p {
+        font-family: $fuenteSansSerif;
+    }
+    @media (max-width: 990px) {
+        padding: 0.5em 1em 0em 1em;
+        
+    }
+}
+
+.seccionTitle {
+    font-size: 3em;
+
+    @media (max-width: 990px) {
+        font-size: 2em;
+        padding-top: 0.2em;
+    }
+}
+
+
 //Mapa//
 
 #map {
@@ -43,13 +67,6 @@ nav .offcanvas li a {
     height: 5em;
 }
 
-.sobreColeccionText {
-    padding-right: 2.3em;
-
-    p {
-        font-family: $fuenteSansSerif;
-    }
-}
 
 // Listado //
 
@@ -72,7 +89,19 @@ nav .offcanvas li a {
         color: #000000;
         background-color: #ebebeb;
     }
-    &:focus{
+
+    &:focus {
         border-color: transparent;
     }
+}
+
+// Contacto //
+.ContactoImg {
+    @extend .sobreColeccionContImg;
+    background-image: url(../img/crowd3.jpg);
+}
+
+.headerContacto {
+    @extend .headerSobreColeccion;
+    background-image: url(../img/crowd3.jpg);
 }

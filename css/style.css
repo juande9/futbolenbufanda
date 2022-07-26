@@ -1,6 +1,22 @@
 * {
   font-family: "Playfair Display", serif; }
 
+/* Contenedor Secciones Gral*/
+.ConteinerText {
+  padding-right: 2.3em; }
+  .ConteinerText p {
+    font-family: "Lato", sans-serif; }
+  @media (max-width: 990px) {
+    .ConteinerText {
+      padding: 0.5em 1em 0em 1em; } }
+
+.seccionTitle {
+  font-size: 3em; }
+  @media (max-width: 990px) {
+    .seccionTitle {
+      font-size: 2em;
+      padding-top: 0.2em; } }
+
 #map {
   width: 100%; }
 
@@ -16,19 +32,14 @@ nav .offcanvas li a {
   text-align: end;
   font-size: 1.2em; }
 
-.sobreColeccionContImg, .headerSobreColeccion, .headerlistado, .listadoImg {
+.sobreColeccionContImg, .headerSobreColeccion, .headerlistado, .headerContacto, .listadoImg, .ContactoImg {
   background-image: url(../img/crowd.jpg);
   background-position: center;
   background-size: cover; }
 
-.headerSobreColeccion, .headerlistado {
+.headerSobreColeccion, .headerlistado, .headerContacto {
   opacity: 0.5;
   height: 5em; }
-
-.sobreColeccionText {
-  padding-right: 2.3em; }
-  .sobreColeccionText p {
-    font-family: "Lato", sans-serif; }
 
 .listadoImg {
   background-image: url(../img/crowd2.webp); }
@@ -46,6 +57,12 @@ nav .offcanvas li a {
 .accordion-button:focus {
   border-color: transparent; }
 
+.ContactoImg {
+  background-image: url(../img/crowd3.jpg); }
+
+.headerContacto {
+  background-image: url(../img/crowd3.jpg); }
+
 .img-thumbnail {
   max-width: 200px;
   max-height: 200px;
@@ -53,7 +70,7 @@ nav .offcanvas li a {
 
 .thumbnailcontainer {
   position: relative;
-  width: 200px;
+  max-width: 200px;
   display: flex;
   flex-direction: row;
   justify-content: center; }
