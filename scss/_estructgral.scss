@@ -5,6 +5,19 @@ $fuenteSansSerif: "Lato", sans-serif;
     font-family: $fuenteSerif;
 }
 
+/* Mapa */
+
+.escudosMapa {
+    height: 2.2em;
+    -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .40));
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .40));
+    &:hover {
+        height: 5em;
+        transition-duration: 500ms;
+        z-index: 1000 !important;
+    }
+}
+
 /* Contenedor Secciones Gral*/
 
 .ConteinerText {
@@ -13,9 +26,10 @@ $fuenteSansSerif: "Lato", sans-serif;
     p {
         font-family: $fuenteSansSerif;
     }
+
     @media (max-width: 990px) {
         padding: 0.5em 1em 0em 1em;
-        
+
     }
 }
 
