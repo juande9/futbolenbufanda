@@ -22,8 +22,15 @@ const eqPaisesBajos = [
 
 const equipos = eqEspañoles.concat(eqArgentina, eqPaisesBajos)
 
+let selectorNombre = document.getElementById("nombre")
 let selectorLiga = document.getElementById("selectorLigas")
 let selectorPais = document.getElementById("selectorPais")
+let selectorEscudo = document.getElementById("escudo")
+let selectorEstadio = document.getElementById("estadio")
+let seleccionLatitud = document.getElementById("latitud")
+let seleccionLongitud = document.getElementById("longitud")
+let ingresoClub = document.getElementById("btnIngreso")
+let error = document.getElementsByClassName("error")
 
 seleccionLiga = ""
 ligas.forEach(element =>
@@ -35,24 +42,28 @@ paises.forEach(element =>
     seleccionPais += `<option value=${element.replace(/ /g, "")}>${element}</option>`)
 selectorPais.innerHTML = seleccionPais
 
-
-/**
- * Sirve para agregar equipos al array equipos
- * @param {Array} Arrayequipos Es el array donde estan los 
- */
-function agregarEquipo(Arrayequipos) {
-    let nombre = prompt("Ingrese el nombre del equipo que desea agregar")
-    let liga = prompt(`Ingrese la Liga:\n0 "LaLiga"\n1 "Primera División RFEF"\n2 "Serie A"\n3 "Ligue 1"\n4 "Premier League"
-                        \n5 "Primeira Liga Portugal"\n6 "Primera División de Argentina"\n7 "Serie B"`)
-    let pais = prompt(`Ingrese el Pais:\n0 "Argentina"\n1 "Italia"\n2 "España"\n3 "Inglaterra"\n4 "Francia"\n5 "Portugal"`)
-    let escudo = prompt(`Ingrese el nombre del png`)
-    let estadio = prompt(`Ingrese el nombre del estadio`)
-    let coordenadas = prompt(`Ingrese las coordenadas del estadio`)
-
-    const equipo = new Equipo(nombre, ligas[liga], paises[pais], `./img/escudos/${escudo}.png`, estadio, coordenadas)
-    Arrayequipos.push(equipo)
+function agregarEquipo(e) {
+    e.preventDefault();
+    const equipo = new Equipo(
+        chequeaValueVacio(selectorNombre.value),
+        selectorLiga.value,
+        selectorPais.value,
+        chequeaValueVacio(selectorEscudo.value),
+        chequeaValueVacio(selectorEstadio.value),
+        chequeaValueVacio(seleccionLatitud.value),
+        chequeaValueVacio(seleccionLongitud.value))
+    equipos.push(equipo)
+    alert("Se cargo el equipo con exito")
 }
 
-/* const bufMadrid1 = new Bufanda(realMadrid.nombre, decada[2], "./img/buf/madrid1.png")
-const bufBarca2 = new Bufanda(barcelona.nombre, decada[1], "./img/buf/barca1.png")
-bufandas.push(bufMadrid1, bufBarca2) */
+function chequeaValueVacio(input) {
+    if (input !== "") {
+        return true
+    } else {
+        for (const error of input) {
+            error.innerText = `Por favor, complete el campo.`
+        }
+    }
+}
+
+ingresoClub.onclick = agregarEquipo

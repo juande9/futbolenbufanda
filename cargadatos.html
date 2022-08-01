@@ -56,6 +56,7 @@
             <div class="form-group">
                 <label for="nombre">Nombre</label>
                 <input type="text" class="form-control" id="nombre">
+                <div class="error"></div>
             </div>
             <div class="form-group">
                 <label for="liga">Liga</label>
@@ -68,24 +69,28 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="logo">Cargué el logo</label>
-                <input type="file" class="form-control" id="logo">
-                <small id="emailHelp" class="form-text text-muted">El archivo debe ser svg.</small>
+                <label for="escudo">Cargué el logo</label>
+                <input type="file" accept="image/svg" id="escudo" class="form-control" id="escudo">
+                <small id="observacionImg" class="form-text text-muted">El archivo debe ser svg.</small>
+                <div class="error"></div>
             </div>
             <div class="form-group">
                 <label for="estadio">Nombre del estadio</label>
                 <input type="text" class="form-control" id="estadio">
+                <div class="error"></div>
             </div>
             <div class="row">
                 <label for="estadio">Coordenadas del estadio</label>
                 <div class="col">
-                  <input type="number" class="form-control" placeholder="Latitud">
+                  <input type="number" class="form-control" placeholder="Latitud" id="latitud">
+                  <div class="error"></div>
                 </div>
                 <div class="col">
-                  <input type="number" class="form-control" placeholder="Longitud">
+                  <input type="number" class="form-control" placeholder="Longitud" id="longitud">
+                  <div class="error"></div>
                 </div>
               </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" id="btnIngreso" class="btn btn-primary">Cargar</button>
         </form>
     </section>
     <script src="ClassEquipos&Bufanda.js"></script>
