@@ -45,25 +45,44 @@ selectorPais.innerHTML = seleccionPais
 function agregarEquipo(e) {
     e.preventDefault();
     const equipo = new Equipo(
-        chequeaValueVacio(selectorNombre.value),
+        selectorNombre.value,
         selectorLiga.value,
         selectorPais.value,
-        chequeaValueVacio(selectorEscudo.value),
-        chequeaValueVacio(selectorEstadio.value),
-        chequeaValueVacio(seleccionLatitud.value),
-        chequeaValueVacio(seleccionLongitud.value))
+        selectorEscudo.value,
+        selectorEstadio.value,
+        seleccionLatitud.value,
+        seleccionLongitud.value,
+    )
     equipos.push(equipo)
     alert("Se cargo el equipo con exito")
 }
 
-function chequeaValueVacio(input) {
-    if (input !== "") {
-        return true
+function corroborarForm(e) {
+    nombre = selectorNombre.value
+    liga = selectorLiga.value,
+        pais = selectorPais.value,
+        escudo = selectorEscudo.value,
+        estadio = selectorEstadio.value,
+        latitud = seleccionLatitud.value,
+        longitud = seleccionLongitud.value,
+
+        e.preventDefault();
+    if (nombre === "" || nombre === null || escudo === "" || escudo === null || estadio === "" ||
+        estadio === null || latitud === "" || latitud === null || longitud === "" || longitud === null) {
+        alert("Error Papu")
     } else {
-        for (const error of input) {
-            error.innerText = `Por favor, complete el campo.`
-        }
+        const equipo = new Equipo(nombre,liga,pais,escudo,estadio,latitud,longitud)
+        equipos.push(equipo)
+    }
+
+}
+
+function checkValueVacio(input) {
+    if (input !== "" || input !== null) {
+        return input
+    } else {
+        return false
     }
 }
 
-ingresoClub.onclick = agregarEquipo
+ingresoClub.onclick = corroborarForm
