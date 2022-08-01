@@ -1,0 +1,95 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga de Datos - Fútbol en Bufandas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="description"
+        content="El futbol y la memoria se ven representadas en esta colección de bufandas de este hermoso deporte.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="linktraductor" href="#">EN</a>
+            <a class="navbar-brand" href="index.html"><img src="https://via.placeholder.com/50x50"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+                aria-controls="offcanvasScrolling"><span class="navbar-toggler-icon"></span></button>
+
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+                id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                <div class="offcanvas-header">
+                    <a class="navbar-brand" href="index.html"><img src="https://via.placeholder.com/50x50"></a>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body bg-dark">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="sobreColeccion.html">Sobre la colección</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="listado.html">Listado de Bufandas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Intercambio/Venta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Mapa Interactivo</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </nav>
+    <section class="container">
+        <h1>Ingresar equipo a la base de datos</h1>
+        <form class="form">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre">
+            </div>
+            <div class="form-group">
+                <label for="liga">Liga</label>
+                <select class="form-control" id="selectorLigas">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pais">Pais</label>
+                <select class="form-control" id="selectorPais">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="logo">Cargué el logo</label>
+                <input type="file" class="form-control" id="logo">
+                <small id="emailHelp" class="form-text text-muted">El archivo debe ser svg.</small>
+            </div>
+            <div class="form-group">
+                <label for="estadio">Nombre del estadio</label>
+                <input type="text" class="form-control" id="estadio">
+            </div>
+            <div class="row">
+                <label for="estadio">Coordenadas del estadio</label>
+                <div class="col">
+                  <input type="number" class="form-control" placeholder="Latitud">
+                </div>
+                <div class="col">
+                  <input type="number" class="form-control" placeholder="Longitud">
+                </div>
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
+    <script src="ClassEquipos&Bufanda.js"></script>
+    <script src="scriptmain.js"></script>
+</body>
+
+</html>

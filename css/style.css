@@ -2,9 +2,13 @@
   font-family: "Playfair Display", serif; }
 
 /* Mapa */
+.form-group label {
+  font-family: "Lato", sans-serif; }
+
 .escudosMapa {
   height: 2.2em;
   -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.4));
+  display: none;
   filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.4)); }
   .escudosMapa:hover {
     height: 5em;

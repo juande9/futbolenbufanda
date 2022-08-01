@@ -7,9 +7,14 @@ $fuenteSansSerif: "Lato", sans-serif;
 
 /* Mapa */
 
+.form-group label{
+    font-family: $fuenteSansSerif;
+}
+
 .escudosMapa {
     height: 2.2em;
     -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .40));
+    display: none;
     filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .40));
     &:hover {
         height: 5em;
