@@ -1,9 +1,10 @@
 $fuenteSerif: 'Playfair Display', serif;
 $fuenteSansSerif: "Lato", sans-serif;
 
-* {
-    font-family: $fuenteSerif;
+.escudoTabla{
+    max-width: 1.5em;
 }
+
 
 /* Mapa */
 
@@ -123,4 +124,42 @@ nav .offcanvas li a {
 .headerContacto {
     @extend .headerSobreColeccion;
     background-image: url(../img/crowd3.jpg);
+}
+
+#accordionListado div img {
+    border: none;
+}
+
+.galeriaCont .tituloBufanda {
+    padding-top: 1.5em;
+}
+
+.subtituloBufanda {
+    font-family: "Lato", sans-serif;
+    font-size: 1em;
+    color: grey;
+    font-weight: 300;
+}
+
+.imgPrimaria{
+    max-height: 500px;
+}
+
+.infoCont{
+    padding-top: 2em;
+}
+
+.imgSecundarias {
+    max-width: 250px;
+    padding: 0.5em;
+}
+
+.infoClub{
+    font-family: "Lato", sans-serif;
+    font-size: 0.7em;
+    text-align: justify;
+}
+
+.infoBufanda{
+    font-weight: 500;
 }
