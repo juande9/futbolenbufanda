@@ -51,8 +51,8 @@
             </div>
     </nav>
     <section class="container">
-        <h1>Ingresar equipo a la base de datos</h1>
-        <form class="form">
+        <h1 class="py-3">Ingresar equipo a la base de datos</h1>
+        <form class="form" id="ingresoClub">
             <div class="form-group">
                 <label for="nombre">Nombre</label>
                 <input type="text" class="form-control" id="nombre">
@@ -80,18 +80,40 @@
                 <div class="error"></div>
             </div>
             <div class="row">
-                <label for="estadio">Coordenadas del estadio</label>
+                <label for="coordenadas">Coordenadas del estadio</label>
                 <div class="col">
-                  <input type="number" class="form-control" placeholder="Latitud" id="latitud">
-                  <div class="error"></div>
+                    <input type="number" class="form-control" placeholder="Latitud" id="latitud" step=".000001">
+                    <div id="errorlatitud"></div>
                 </div>
                 <div class="col">
-                  <input type="number" class="form-control" placeholder="Longitud" id="longitud">
-                  <div class="error"></div>
+                    <input type="number" class="form-control" placeholder="Longitud" id="longitud" step=".000001">
+                    <div id="errorlongitud"></div>
                 </div>
-              </div>
-            <button type="submit" id="btnIngreso" class="btn btn-primary">Cargar</button>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-secondary my-3 btn-block">Cargar</button>
+                <p id="estadoCarga"></p>
+            </div>
         </form>
+    </section>
+    <section class="container">
+        <h2 class="my-3">Equipos ya cargados</h2>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col-3" id="ordenarEquipo">Nombre <i class="bi bi-arrow-down-short"></i></th>
+                    <th scope="col-3">Liga</th>
+                    <th scope="col">Pais</th>
+                    <th scope="col">Estadio</th>
+                    <th scope="col">Latitud</th>
+                    <th scope="col">Longitud</th>
+                    <th scope="col">Escudo</th>
+                </tr>
+            </thead>
+            <tbody id="listadoEquipos">
+            </tbody>
+        </table>
     </section>
     <script src="ClassEquipos&Bufanda.js"></script>
     <script src="scriptmain.js"></script>

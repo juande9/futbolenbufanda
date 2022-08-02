@@ -3,7 +3,6 @@ const paises = ["Argentina", "Italia", "España", "Inglaterra", "Francia", "Port
 const decada = ["80s", "90s", "00s", "10s", "20s"]
 const bufandas = []
 
-
 const eqEspañoles = [
     new Equipo("Real Madrid", ligas[0], paises[2], "realMadrid", "Santiago Bernabéu", "40.45306", "-3.68835"),
     new Equipo("Barcelona", ligas[0], paises[2], "barcelona", "Camp Nou", "41.380833", "2.1225"),
@@ -29,8 +28,10 @@ let selectorEscudo = document.getElementById("escudo")
 let selectorEstadio = document.getElementById("estadio")
 let seleccionLatitud = document.getElementById("latitud")
 let seleccionLongitud = document.getElementById("longitud")
-let ingresoClub = document.getElementById("btnIngreso")
+let ingresoClub = document.getElementById("ingresoClub")
 let error = document.getElementsByClassName("error")
+let tabla = document.getElementById("listadoEquipos")
+let estadoCarga = document.getElementById("estadoCarga")
 
 seleccionLiga = ""
 ligas.forEach(element =>
@@ -42,47 +43,91 @@ paises.forEach(element =>
     seleccionPais += `<option value=${element.replace(/ /g, "")}>${element}</option>`)
 selectorPais.innerHTML = seleccionPais
 
+function mostrarEquiposTabla() {
+    tabla.innerHTML = ""
+    equipos.forEach((element, i) =>
+        tabla.innerHTML += `<tr>
+        <th scope="row">${i + 1}</th>
+        <td>${element.nombre}</td>
+        <td>${element.liga}</td>
+        <td>${element.pais}</td>
+        <td>${element.estadio}</td>
+        <td>${element.coordenadlat}</td>
+        <td>${element.coordenadlong}</td>
+        <td><img class="escudoTabla" src=${element.escudo}></td>
+        </tr>`)
+}
+
+mostrarEquiposTabla()
+
 function agregarEquipo(e) {
     e.preventDefault();
-    const equipo = new Equipo(
-        selectorNombre.value,
-        selectorLiga.value,
-        selectorPais.value,
-        selectorEscudo.value,
-        selectorEstadio.value,
-        seleccionLatitud.value,
-        seleccionLongitud.value,
-    )
-    equipos.push(equipo)
-    alert("Se cargo el equipo con exito")
-}
-
-function corroborarForm(e) {
-    nombre = selectorNombre.value
-    liga = selectorLiga.value,
-        pais = selectorPais.value,
-        escudo = selectorEscudo.value,
-        estadio = selectorEstadio.value,
-        latitud = seleccionLatitud.value,
-        longitud = seleccionLongitud.value,
-
-        e.preventDefault();
-    if (nombre === "" || nombre === null || escudo === "" || escudo === null || estadio === "" ||
-        estadio === null || latitud === "" || latitud === null || longitud === "" || longitud === null) {
-        alert("Error Papu")
-    } else {
-        const equipo = new Equipo(nombre,liga,pais,escudo,estadio,latitud,longitud)
+    nombre = checkVacio(selectorNombre.value)
+    liga = checkVacio(selectorLiga.value)
+    pais = checkVacio(selectorPais.value)
+    escudo = checkVacio(selectorEscudo.value)
+    estadio = checkVacio(selectorEstadio.value)
+    latitud = checkVacio(checkLatitud(seleccionLatitud.value))
+    longitud = checkVacio(checkLongitud(seleccionLongitud.value))
+    if (nombre && liga && pais && escudo && estadio && latitud && longitud) {
+        const equipo = new Equipo(nombre, liga, pais, escudo, estadio, latitud, longitud)
         equipos.push(equipo)
+        estadoCarga.innerText = `El equipo ${nombre} cargado correctamente.`
+        estadoCarga.style.color = "green"
+        mostrarEquiposTabla()
+    } else {
+        estadoCarga.innerHTML = "Hubo un error al cargar el equipo. Intente nuevamente."
+        estadoCarga.style.color = "red"
     }
-
 }
 
-function checkValueVacio(input) {
-    if (input !== "" || input !== null) {
-        return input
+function checkVacio(valor) {
+    if (valor !== "") {
+        return valor
     } else {
+
         return false
     }
 }
 
-ingresoClub.onclick = corroborarForm
+function checkLatitud(numero) {
+    let errorLatitud = document.getElementById("errorlatitud");
+    if (numero <= 90 && numero >= -90) {
+        errorLatitud.innerHTML = ""
+        return numero
+    } else {
+        errorLatitud.innerHTML = "<b>El numero debe ser entre -90º y 90º</b>"
+        seleccionLatitud.value = ""
+    }
+}
+
+function checkLongitud(numero) {
+    let errorLongitud = document.getElementById("errorlongitud");
+    if (numero <= 180 && numero >= -180) {
+        errorLongitud.innerHTML = ""
+        return numero
+    } else {
+        errorLongitud.innerHTML = "<b>El numero debe ser entre -180º y 180º</b>"
+        seleccionLongitud.value = ""
+    }
+}
+
+ingresoClub.onsubmit = agregarEquipo
+
+function ordenarTabla() {
+    equipos.sort((a, b) => {
+        if (a.nombre > b.nombre) {
+            return 1;
+        }
+        if (a.nombre < b.nombre) {
+            return -1;
+        }
+        return 0;
+    })
+    ordenarEquipo.innerHTML = `Nombre <i id="inverso" class="bi bi-arrow-up-short"></i>`
+    mostrarEquiposTabla()
+}
+
+ordenarEquipo = document.getElementById("ordenarEquipo")
+ordenarEquipo.onclick = ordenarTabla
+ordenarEquipo.style.cursor = "pointer"

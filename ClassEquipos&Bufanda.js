@@ -3,7 +3,7 @@ class Equipo {
         this.nombre = nombre;
         this.liga = liga;
         this.pais = pais;
-        this.escudo = escudo;
+        this.escudo = `./img/escudos/${escudo}.svg`;
         this.estadio = estadio;
         this.coordenadlat = coordenadlat;
         this.coordenadlong = coordenadlong;

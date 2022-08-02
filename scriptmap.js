@@ -40,7 +40,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 var currentZoom = parseInt(map.getZoom())
-console.log(currentZoom)
 
 let mapa = document.getElementById("map")
 
@@ -51,14 +50,22 @@ mapa.onwheel = (e) => {
     checkEscudos(currentZoom);
 }
 
+
+
 equipos.forEach(elemento => {
-    var myIcon = L.icon({
+    popupContent = `${elemento.nombre}`
+    let myIcon = L.icon({
         iconUrl: elemento.escudo,
         iconAnchor: [5, 5],
         className: "escudosMapa"
     });
-    L.marker([elemento.coordenadlat, elemento.coordenadlong], { icon: myIcon }).addTo(map);
+    let marker = L.marker([elemento.coordenadlat, elemento.coordenadlong], { icon: myIcon }).addTo(map);
+    console.log(marker)
+    marker.on("click",L.popup()
+    .setLatLng([elemento.coordenadlat, elemento.coordenadlong])
+    .setContent(`${elemento.nombre}`))
 })
+
 
 var escudos = document.getElementsByClassName("escudosMapa")
 
